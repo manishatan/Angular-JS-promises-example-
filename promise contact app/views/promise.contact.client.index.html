@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="promise contact app" >
+<head>
+    <meta charset="UTF-8">
+    <title>Example of promises</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body >
+<div ng-controller="contactController">
+    <h1> Contacts Display  </h1>
+     <table class="table">
+        <thead >
+        <tr>
+            <th ng-repeat="header in contactIT.headers">{{header | labelCase}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contact in contactIT.contacts">
+            <td ng-repeat="(k,v) in contact ">{{ v | nameCase }}</td> <!-- Iterating over object properties using ng-repeat -->
+      </tr>
+        </tbody>
+    </table>
+    {{message}}
+</div>
+<!-- Vendor Dependencies-->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- Application Dependencies -->
+<script src="../promise.contact.config.js"></script>
+<script src="../controllers/promise.contact.client.controller.js"></script>
+<script src="../services/promise.contact.client.service.js"></script>
+<script src="../filters/promise.contact.client.filter.js"></script>
+
+</body>
+</html>
